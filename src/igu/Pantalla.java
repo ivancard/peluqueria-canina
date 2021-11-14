@@ -1,5 +1,7 @@
 package igu;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -13,7 +15,24 @@ public class Pantalla extends javax.swing.JFrame {
 
     public Pantalla(Controladora control) {
         initComponents();
+        setIconImage(getIconImage());
+        
         this.control = control;
+        
+        // LLena el ArrayList con los numeros de cliente almacenados anteriormente.
+        for (Cliente cliente : control.obtenerClientes()) {
+            listaNumCliente.add(cliente.getNumCliente());
+        }
+        
+        
+    }
+    
+    
+    // Se establece un icono para el JFrame.
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/dog_16.png"));       
+        return retValue;
     }
 
     @SuppressWarnings("unchecked")
@@ -48,15 +67,15 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Peluquería Canina");
-        setMaximumSize(new java.awt.Dimension(800, 770));
-        setMinimumSize(new java.awt.Dimension(800, 770));
-        setPreferredSize(new java.awt.Dimension(800, 770));
+        setTitle("  Peluquería Canina");
+        setMaximumSize(new java.awt.Dimension(900, 770));
+        setMinimumSize(new java.awt.Dimension(900, 770));
+        setPreferredSize(new java.awt.Dimension(900, 770));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Ebrima", 1, 50)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Rectangle 16.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/banner.png"))); // NOI18N
         jLabel1.setText("Peluquería Canina");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -65,8 +84,8 @@ public class Pantalla extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 334, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 904, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 230, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,8 +226,8 @@ public class Pantalla extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(109, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel11)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -247,8 +266,8 @@ public class Pantalla extends javax.swing.JFrame {
                         .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1))
-                .addContainerGap(45, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(74, 74, 74))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,10 +312,10 @@ public class Pantalla extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 490, 560));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 560, 590));
 
         jPanel3.setBackground(new java.awt.Color(232, 235, 237));
 
@@ -309,17 +328,17 @@ public class Pantalla extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(121, 121, 121)
+                .addGap(118, 118, 118)
                 .addComponent(jLabel2)
-                .addContainerGap(157, Short.MAX_VALUE))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 310, 590));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 340, 590));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -339,8 +358,6 @@ public class Pantalla extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
 
-        String numCliente = txtClienteNum.getText();
-
         /**
          * 
          *  Valida que no exista otro numero de cliente igual. Para ello se estableció 
@@ -350,32 +367,39 @@ public class Pantalla extends javax.swing.JFrame {
          * 
          * */
         
+        String numCliente = txtClienteNum.getText();
+        
         if (!listaNumCliente.contains(numCliente)) {
+            
             listaNumCliente.add(numCliente);
             
-            String numClienteIgu = numCliente;
-            String nombreMascota= txtNombreMascota.getText();
-            String razaMascota  = txtRaza.getText();
-            String colorMascota = txtColor.getText();
-            Boolean esAlergico = comboAlergia.getSelectedItem().toString() == "SI" ? true : false;
+            String numClienteIgu = numCliente.trim();
+            String nombreMascota= txtNombreMascota.getText().trim();
+            String razaMascota  = txtRaza.getText().trim();
+            String colorMascota = txtColor.getText().trim();
+            
+            // Solo guarda "true" si es seleccionado "SI" en el comboBox
+            Boolean esAlergico = comboAlergia.getSelectedItem().toString() == "SI" ? true : false; 
             Boolean atencionEscpecial = comboAtencion.getSelectedItem().toString() ==  "SI" ? true : false;
-            String nombreDuenio = txtNombreDuenio.getText();
-            String telefonoDuenio = txtTelefono.getText();
-            String observaciones = txtObservaciones.getText();
             
-            try {
+            String nombreDuenio = txtNombreDuenio.getText().trim();
+            String telefonoDuenio = txtTelefono.getText().trim();
+            
+            //En el caso de no haber observaciones guarda "sin observaciones"
+            String observaciones = txtObservaciones.getText().trim().equals("") ? "Sin observaciones" : txtObservaciones.getText().trim();
+            
+            // Valida si los campos no estan vacios.
+            if (numClienteIgu.equals("") || nombreMascota.equals("")|| razaMascota.equals("")|| colorMascota.equals("")|| nombreDuenio.equals("")|| telefonoDuenio.equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Uno o mas campos estan vacios.", "No se agregó el cliente", JOptionPane.ERROR_MESSAGE);
+            }else{
                 control.crearCliente(numClienteIgu, nombreMascota, razaMascota, colorMascota, esAlergico, atencionEscpecial, nombreDuenio, telefonoDuenio, observaciones);
-                JOptionPane.showMessageDialog(rootPane, "Cliente agregado correctamete", "Cliente Agregado", JOptionPane.INFORMATION_MESSAGE);        
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(rootPane, "El cliente esta vacio.", "No se agregó el cliente", JOptionPane.ERROR_MESSAGE);
-            }
-            
+                JOptionPane.showMessageDialog(rootPane, "Cliente agregado correctamete", "Cliente Agregado", JOptionPane.INFORMATION_MESSAGE);
+                cleanFields();
+            }             
         } else {
             
             JOptionPane.showMessageDialog(rootPane, "El numero de cliente ya esta en uso", "No se agregó el cliente", JOptionPane.ERROR_MESSAGE);
         }
-
-        cleanFields();
 
     }//GEN-LAST:event_btnGuardarActionPerformed
 

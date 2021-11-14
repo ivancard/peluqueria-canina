@@ -16,12 +16,6 @@ public class PeluqueriaCaninaTPO {
         screen.setVisible(true);
         screen.setLocationRelativeTo(null);
         
-        
-        
-        
-        
-        
-        
     }
     
 }

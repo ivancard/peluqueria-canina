@@ -21,7 +21,7 @@ public class ControladoraPersistencia {
     
     //Se crea una lista con los numeros de clientes de la BD
     
-    public List<Cliente> obtenerHuespedes(){
+    public List<Cliente> obtenerClientes(){
      return clienteJPA.findClienteEntities();
     }
 }

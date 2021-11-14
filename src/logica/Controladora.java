@@ -1,5 +1,6 @@
 package logica;
 
+import java.util.List;
 import persistencia.ControladoraPersistencia;
 
 public class Controladora {
@@ -24,4 +25,10 @@ public class Controladora {
         
         controlPersis.crearCliente( new Cliente(numCliente, nombreMascota, razaMascota, colorMascota, esAlergico, atencionEscpecial, nombreDuenio, telefonoDuenio, observaciones));
     }
+    
+    public List<Cliente> obtenerClientes(){
+        return controlPersis.obtenerClientes();
+    }
+    
+    
 }
