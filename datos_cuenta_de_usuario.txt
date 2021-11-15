@@ -1,2 +1,3 @@
-cuenta: peluqueria
-contraseña: 12345
+Nombre de la base de datos: peluqueria_canina
+Cuenta: peluqueria
+Contraseña: 12345
